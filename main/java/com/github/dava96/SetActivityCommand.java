@@ -26,7 +26,7 @@ public class SetActivityCommand {
                 activity += activityArray[i];
                 activity += space;
         }
-        setActivityName(activity);
+        setActivityName(activity.trim());
     }
 
     public String getActivityName() {
@@ -34,7 +34,6 @@ public class SetActivityCommand {
     }
 
     public void setActivityName(String setName) {
-
         this.activityName = setName;
     }
 
