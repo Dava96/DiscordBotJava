@@ -50,40 +50,39 @@ public class QuerySearch {
 
             query += this.queryArray[i];
             query += " ";
-            this.searchTerm = query;
+            this.searchTerm = query.trim();
         }
-        System.out.println(this.searchTerm);
         return this.searchTerm;
     }
 
     public String searchYoutube() {
         String link = "https://www.youtube.com/results?search_query=";
         this.searchTerm = this.searchTerm.replaceAll("( )", "+");
-        return link + this.searchTerm.substring(0, searchTerm.length() -1);
+        return link + this.searchTerm;
     }
 
     public String searchSpotify() {
         String link = "https://open.spotify.com/search/results/";
         this.searchTerm = this.searchTerm.replaceAll("( )", "%20");
-        return link + this.searchTerm.substring(0, searchTerm.length() -3);
+        return link + this.searchTerm;
     }
 
     public String searchGoogle() {
         String link = "https://www.google.com/search?rlz=1C1GCEA_enGB850GB850&ei=1mP8XLqSG5yG1fAP-4OOqAw&q=";
         this.searchTerm = this.searchTerm.replaceAll("( )", "+");
-        return link + this.searchTerm.substring(0, searchTerm.length() -1);
+        return link + this.searchTerm;
     }
 
     public String searchImbd() {
         String link = "https://www.imdb.com/find?ref_=nv_sr_fn&q=";
         this.searchTerm = this.searchTerm.replaceAll("( )", "+");
-        return link + this.searchTerm.substring(0, searchTerm.length() -1);
+        return link + this.searchTerm;
     }
 
     public String searchTwitchGame() {
         String link = "https://www.twitch.tv/directory/game/";
         this.searchTerm = this.searchTerm.replaceAll("( )", "%20");
-        return link + this.searchTerm.substring(0, searchTerm.length() -3);
+        return link + this.searchTerm;
     }
 
     public String searchTwitch() {
