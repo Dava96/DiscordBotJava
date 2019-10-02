@@ -42,6 +42,8 @@ public class QuerySearch {
             return searchTwitch();
         } else if (this.queryArray[1].contains("reddit")) {
         	return searchReddit();
+		} else if (this.queryArray[1].contains("amazon")) {
+        	return searchAmazon();
 		}
         return null;
     }
@@ -94,8 +96,13 @@ public class QuerySearch {
 
     public String searchReddit() {
     	String link = "https://www.reddit.com/search/?q=";
+		this.searchTerm = this.searchTerm.replaceAll("( )", "%20");
     	return link + this.searchTerm;
 	}
 
-
+	public String searchAmazon() {
+    	String link = "https://www.amazon.co.uk/s?k="
+		this.searchTerm = this.searchTerm.replaceAll("( )", "+");
+    	return link + this.searchTerm;
+	}
 }
