@@ -40,7 +40,9 @@ public class QuerySearch {
             return searchTwitchGame();
         } else if (this.queryArray[1].contains("twitch")) {
             return searchTwitch();
-        }
+        } else if (this.queryArray[1].contains("reddit")) {
+        	return searchReddit();
+		}
         return null;
     }
 
@@ -89,6 +91,11 @@ public class QuerySearch {
         String link = "https://www.twitch.tv/"; // twitch channels names don't have spaces in them
         return link + this.searchTerm;
     }
+
+    public String searchReddit() {
+    	String link = "https://www.reddit.com/search/?q=";
+    	return link + this.searchTerm;
+	}
 
 
 }
